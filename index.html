@@ -1,6 +1,7 @@
   <!DOCTYPE html>
 <html>
 <head>
+  <meta name="google-signin-client_id" content="445023753332-bp68tbf2iapf02fjigisk5gbsans937o.apps.googleusercontent.com">
   <!--
     If you are serving your web app in a path other than the root, change the
     href value below to reflect the base path you are serving from.
@@ -11,7 +12,7 @@
     Fore more details:
     * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base
   -->
-  <base href="/web_healthful/">
+  <base href="/">
 
   <meta charset="UTF-8">
   <meta content="IE=Edge" http-equiv="X-UA-Compatible">
@@ -31,16 +32,8 @@
 </head>
 <body>
   <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
-  <!-- This script installs service_worker.js to provide PWA functionality to
-       application. For more information, see:
-       https://developers.google.com/web/fundamentals/primers/service-workers -->
-  <script>
-    if ('serviceWorker' in navigator) {
-      window.addEventListener('flutter-first-frame', function () {
-        navigator.serviceWorker.register('flutter_service_worker.js?v=4079158683');
-      });
-    }
-  </script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-firestore.js"></script>
 
   <script>
   var firebaseConfig = {
@@ -52,8 +45,17 @@
     appId: "1:445023753332:web:dfdc707c0579a17e33ad21"
   };
   firebase.initializeApp(firebaseConfig);
-  </script>
+   </script>
+   <script>
+     if ('serviceWorker' in navigator) {
+       window.addEventListener('flutter-first-frame', function () {
+        navigator.serviceWorker.register('flutter_service_worker.js');
+      });
+    }
+   </script>
 
-  <script src="main.dart.js" type="application/javascript"></script>
+
+
+   <script src="main.dart.js" type="application/javascript"></script>
 </body>
 </html>
